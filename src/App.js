@@ -6,7 +6,6 @@ import Formulario from './componentes/Formulario/Formulario';
 import MiOrg from './componentes/MiOrg';
 import Equipo from './componentes/Equipo';
 import Footer from './componentes/Footer';
-import Colaborador from './componentes/Colaborador';
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false)
@@ -21,36 +20,36 @@ function App() {
   },
   {
     id: uuid(),
-    "nombre": "Harland",
-    "puesto": "Instructor",
-    "foto": "https://github.com/harlandlohora.png",
+    "nombre": "Jose Gonzalez",
+    "puesto": "Dev. FullStack",
+    "foto": "https://github.com/JoseDarioGonzalezCha.png",
     "equipo": "Front End",
     fav: false
     
 },
 {
   id: uuid(),
-  "nombre": "Harland",
-  "puesto": "Instructor",
-  "foto": "https://github.com/harlandlohora.png",
+  "nombre": "Christian Velasco",
+  "puesto": "Head de Alura e instructor",
+  "foto": "https://github.com/christianpva.png",
   "equipo": "Programación",
   fav: false
   
 },
 {
   id: uuid(),
-  "nombre": "Harland",
-  "puesto": "Instructor",
-  "foto": "https://github.com/harlandlohora.png",
+  "nombre": "Jeanmarie Quijada",
+  "puesto": "Instructora en Alura Latam",
+  "foto": "https://github.com/JeanmarieAluraLatam.png",
   "equipo": "UX y Diseño",
   fav: false
   
 },
 {
   id: uuid(),
-  "nombre": "Harland",
+  "nombre": "Jean",
   "puesto": "Instructor",
-  "foto": "https://github.com/harlandlohora.png",
+  "foto": "https://github.com/jeanTULF.png",
   "equipo": "Innovación y Gestión",
   fav: false
   
@@ -146,14 +145,17 @@ function App() {
   }
 
   const like = (id) => {
-    console.log("Like", like)
-    const colaboradoresActualizados = colaboradores.map ((colaborador) => {
+    console.log("Like", id)
+    const colaboradoresActualizados = colaboradores.map((colaborador) => {
       if(colaborador.id === id) {
         colaborador.fav = !colaborador.fav
       }
       return colaborador
     })
+
+    actualizarColaboradores(colaboradoresActualizados)
   }
+
 
   return (
     <div >
